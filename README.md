@@ -1,5 +1,4 @@
 # Secure-PHP-CAPTCHA-
-# PHP Multi-Step CAPTCHA
 
 Dieses Projekt implementiert ein **6-Schritte-CAPTCHA** in PHP ohne JavaScript.  
 

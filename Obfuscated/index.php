@@ -1,26 +1,5 @@
-<?php
-@session_start();
-if(empty($_SESSION['x'])||count($_SESSION['x'])!==6){
-    $_SESSION['x']=[];
-    for($z=1;$z<=6;$z++){
-        $a=random_int(1,36);
-        $_SESSION['x'][$z]=($a<=26)?chr(64+$a):(string)($a-27);
-    }
-    $_SESSION['y']=[];
-    $_SESSION['s']=1;
-}
-if(empty($_SESSION['t'])){$_SESSION['t']=bin2hex(random_bytes(32));}
-$c=$_SESSION['s'];
-if($_SERVER['REQUEST_METHOD']==='POST'){
-    if(!isset($_POST['csrf_token'])||!hash_equals($_SESSION['t'],$_POST['csrf_token']))exit('CSRF token ungültig');
-    $v=isset($_POST['captcha_input'])?mb_substr(trim($_POST['captcha_input']),0,1):'';
-    if($v!==''){
-        $_SESSION['y'][$c]=$v;
-        if($c<6){$_SESSION['s']++;}else{header('Location: verify.php');exit;}
-    }
-    $c=$_SESSION['s'];
-}
-?><!DOCTYPE html>
+<?php session_start();if(empty($_SESSION[base64_decode('Y2FwdGNoYV9leHBlY3RlZA==')])||count($_SESSION[base64_decode('Y2FwdGNoYV9leHBlY3RlZA==')])!==6){$_SESSION[base64_decode('Y2FwdGNoYV9leHBlY3RlZA==')]=[];for($_e66c3671=1;$_e66c3671<=6;$_e66c3671++){$_6c09ff9d=random_int(1,36);$_SESSION[base64_decode('Y2FwdGNoYV9leHBlY3RlZA==')][$_e66c3671]=($_6c09ff9d<=26)?chr(64+$_6c09ff9d):(string)($_6c09ff9d-27);}$_SESSION[base64_decode('Y2FwdGNoYV9lbnRlcmVk')]=[];$_SESSION[base64_decode('Y3VycmVudF9zdGVw')]=1;}if(empty($_SESSION[base64_decode('Y3NyZl90b2tlbg==')])){$_SESSION[base64_decode('Y3NyZl90b2tlbg==')]=bin2hex(random_bytes(32));}$_a71cb7ce=$_SESSION[base64_decode('Y3VycmVudF9zdGVw')];if($_SERVER[base64_decode('UkVRVUVTVF9NRVRIT0Q=')]===base64_decode('UE9TVA==')){if(!isset($_POST[base64_decode('Y3NyZl90b2tlbg==')])||!hash_equals($_SESSION[base64_decode('Y3NyZl90b2tlbg==')],$_POST[base64_decode('Y3NyZl90b2tlbg==')])){die(base64_decode('Q1NSRiB0b2tlbiB1bmfDvGx0aWc='));}$_d82832d7=isset($_POST[base64_decode('Y2FwdGNoYV9pbnB1dA==')])?mb_substr(trim($_POST[base64_decode('Y2FwdGNoYV9pbnB1dA==')]),0,1):'';if($_d82832d7!==''){$_SESSION[base64_decode('Y2FwdGNoYV9lbnRlcmVk')][$_a71cb7ce]=$_d82832d7;if($_a71cb7ce<6){$_SESSION[base64_decode('Y3VycmVudF9zdGVw')]++;}else{header(base64_decode('TG9jYXRpb246IHZlcmlmeS5waHA='));exit;}}$_a71cb7ce=$_SESSION[base64_decode('Y3VycmVudF9zdGVw')];}?>
+    <!DOCTYPE html>
 <html lang="de"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>CAPTCHA Schritt <?php echo $c;?> / 6</title>
 <style>
 body{font-family:system-ui,Arial,sans-serif;background:#1c1e24;color:#e8edf6;display:flex;justify-content:center;align-items:center;height:100vh}

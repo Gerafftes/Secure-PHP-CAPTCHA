@@ -2,7 +2,12 @@
 session_start();
 
 $step = isset($_GET['step']) ? (int)$_GET['step'] : 1;
-$char = $_SESSION['captcha_expected'][$step] ?? '?';
+if (!isset($_SESSION['captcha_expected'][$step])) {
+    // Falls Step ungültig → Notfallausgabe
+    $char = '?';
+} else {
+    $char = $_SESSION['captcha_expected'][$step];
+}
 
 /* Zielgröße für die Ausgabe */
 $W_final = 160; 

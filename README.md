@@ -33,4 +33,4 @@ Dieses Projekt implementiert ein **6-Schritte-CAPTCHA** in PHP ohne JavaScript.
 - Schriftfarbe, Rauschintensität, Störlinien können in `generate.php` angepasst werden.  
 - CAPTCHA-Zeichenlänge (aktuell 6) kann in `index.php` und `generate.php` leicht geändert werden.
 
- <img src="img/Screenshot 2025-08-08 002358.png" width="200"/>
+ <img src="img/Screenshot 2025-08-08 002358.png" width="300"/>

@@ -26,3 +26,11 @@ if ($ok) {
   echo '<h1>Fehler</h1><p>Falsche Eingabe bei Feld: ' . implode(', ', $mismatch) . '.</p>';
   echo '<p><a href="index.php">Nochmal versuchen</a></p>';
 }
+/* 
+   .--.
+   |o_o |
+   |:_/ |
+   //   \\\
+  (\_\  /_)
+   ^^   ^^
+*/

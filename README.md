@@ -18,7 +18,7 @@ Dieses Projekt implementiert ein **6-Schritte-CAPTCHA** in PHP ohne JavaScript.
 
 ## Setup
 
-1. Stelle sicher, dass die GD-Library in PHP aktiviert ist.  
+1. Stell sicher, dass die GD-Library in PHP aktiviert ist.  
 2. Lege eine TrueType-Schriftdatei `arial.ttf` in den Projektordner (für saubere Schrift im Captcha).  
 3. Öffne `index.php` im Browser und durchlaufe die 6 Schritte.
 

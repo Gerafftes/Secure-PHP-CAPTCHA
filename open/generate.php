@@ -93,3 +93,11 @@ imagecopyresized($out, $im, 0, 0, 0, 0, $W_final, $H_final, $W, $H);
 imagedestroy($im);
 imagepng($out);
 imagedestroy($out);
+/* 
+   .--.
+   |o_o |
+   |:_/ |
+   //   \\\
+  (\_\  /_)
+   ^^   ^^
+*/
